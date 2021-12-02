@@ -35,6 +35,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -47,28 +49,25 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nloptr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="articles/nloptr.html">Get started</a>
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/astamm/nloptr/">
+  <a href="https://github.com/astamm/nloptr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -85,93 +84,96 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="nloptr-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#nloptr-" class="anchor"></a>nloptr <img src="reference/figures/logo.png" align="right" height="139">
+<div class="section level1">
+<div class="page-header"><h1 id="nloptr-">nloptr <img src="reference/figures/logo.png" align="right" height="139"><a class="anchor" aria-label="anchor" href="#nloptr-"></a>
 </h1></div>
 <!-- badges: start -->
 
-<p><strong>nloptr</strong> is an R interface to <a href="https://nlopt.readthedocs.io/en/latest/">NLopt</a>, a free/open-source library for nonlinear optimization started by Steven G. Johnson, providing a common interface for a number of different free optimization routines available online as well as original implementations of various other algorithms. It can be used to solve general nonlinear programming problems with nonlinear constraints and lower and upper bounds for the controls, such as</p>
+<p><strong>nloptr</strong> is an R interface to <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link">NLopt</a>, a free/open-source library for nonlinear optimization started by Steven G. Johnson, providing a common interface for a number of different free optimization routines available online as well as original implementations of various other algorithms. It can be used to solve general nonlinear programming problems with nonlinear constraints and lower and upper bounds for the controls, such as</p>
 <p>min<sub><em>x</em> ∈ ℝ<sup><em>n</em></sup></sub>  <em>f</em>(<em>x</em>),</p>
 <p>s.t. <em>g</em>(<em>x</em>) ≤ 0, <em>h</em>(<em>x</em>) = 0 and ℓ ≤ <em>x</em> ≤ <em>u</em>.</p>
-<p>The <a href="https://nlopt.readthedocs.io/en/latest/">NLopt</a> library is available under the GNU Lesser General Public License (LGPL), and the copyrights are owned by a variety of authors. See the <a href="https://nlopt.readthedocs.io/en/latest/Citing_NLopt/">website</a> for information on how to cite NLopt and the algorithms you use.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<p>The <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link">NLopt</a> library is available under the GNU Lesser General Public License (LGPL), and the copyrights are owned by a variety of authors. See the <a href="https://nlopt.readthedocs.io/en/latest/Citing_NLopt/" class="external-link">website</a> for information on how to cite NLopt and the algorithms you use.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>You can install <strong>nloptr</strong> from CRAN using:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">"nloptr"</span>)</span></code></pre></div>
 <p>Alternatively, you can install the development version from GitHub:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install.packages("remotes")</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"astamm/nloptr"</span>)</span></code></pre></div>
-<p>The latest version 2.7.0 of the <a href="https://nlopt.readthedocs.io/en/latest/">NLopt</a> library will then be automatically built using <a href="https://cmake.org">CMake</a>. The package will try to find a <a href="https://cmake.org">CMake</a> binary on your <code>PATH</code>. If it cannot find one, the installation will fail with a message giving you simple instructions for installing <a href="https://cmake.org">CMake</a> first. Alternatively, you can set an environment variable <code>CMAKE_BIN</code> pointing to a <a href="https://cmake.org">CMake</a> binary of your liking on your computer for <strong>nloptr</strong> to use.</p>
+<p>The latest version 2.7.0 of the <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link">NLopt</a> library will then be automatically built using <a href="https://cmake.org" class="external-link">CMake</a>. The package will try to find a <a href="https://cmake.org" class="external-link">CMake</a> binary on your <code>PATH</code>. If it cannot find one, the installation will fail with a message giving you simple instructions for installing <a href="https://cmake.org" class="external-link">CMake</a> first. Alternatively, you can set an environment variable <code>CMAKE_BIN</code> pointing to a <a href="https://cmake.org" class="external-link">CMake</a> binary of your liking on your computer for <strong>nloptr</strong> to use.</p>
 </div>
-<div id="acknowledgments" class="section level2">
-<h2 class="hasAnchor">
-<a href="#acknowledgments" class="anchor"></a>Acknowledgments</h2>
-<p>I would like to express my sincere gratitude to <a href="https://github.com/eddelbuettel">Dirk Eddelbuettel</a>, Uwe Ligges and <a href="https://github.com/jyypma">Jelmer Ypma</a> for the very instructive discussions about the pros and cons of various build strategies in R packages.</p>
+<div class="section level2">
+<h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>
+</h2>
+<p>I would like to express my sincere gratitude to <a href="https://github.com/eddelbuettel" class="external-link">Dirk Eddelbuettel</a>, Uwe Ligges and <a href="https://github.com/jyypma" class="external-link">Jelmer Ypma</a> for the very instructive discussions about the pros and cons of various build strategies in R packages.</p>
 </div>
-<div id="reference" class="section level2">
-<h2 class="hasAnchor">
-<a href="#reference" class="anchor"></a>Reference</h2>
-<p>Steven G. Johnson, The NLopt nonlinear-optimization package, <a href="https://nlopt.readthedocs.io/en/latest/" class="uri">https://nlopt.readthedocs.io/en/latest/</a></p>
+<div class="section level2">
+<h2 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a>
+</h2>
+<p>Steven G. Johnson, The NLopt nonlinear-optimization package, <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link uri">https://nlopt.readthedocs.io/en/latest/</a></p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=nloptr">https://​cloud.r-project.org/​package=nloptr</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/astamm/nloptr/">https://​github.com/​astamm/​nloptr/​</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=nloptr" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/astamm/nloptr/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small>LGPL (&gt;= 3)</small></li>
 </ul>
 </div>
+
+
 <div class="citation">
-<h2>Citation</h2>
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html">Citing nloptr</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Jelmer Ypma <br><small class="roles"> Author </small>  </li>
-<li>Steven G. Johnson <br><small class="roles"> Author </small>  <br><small>(author of the NLopt C library)</small>
-</li>
-<li>Aymeric Stamm <br><small class="roles"> Contributor, maintainer </small> <a href="https://orcid.org/0000-0002-8725-3654" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing nloptr</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/astamm/nloptr/actions"><img src="https://github.com/astamm/nloptr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://github.com/astamm/nloptr/actions"><img src="https://github.com/astamm/nloptr/workflows/test-coverage/badge.svg" alt="test-coverage"></a></li>
-<li><a href="https://app.codecov.io/gh/astamm/nloptr?branch=master"><img src="https://codecov.io/gh/astamm/nloptr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://github.com/astamm/nloptr/actions"><img src="https://github.com/astamm/nloptr/workflows/pkgdown/badge.svg" alt="pkgdown"></a></li>
-<li><a href="https://CRAN.R-project.org/package=nloptr"><img src="https://www.r-pkg.org/badges/version/nloptr" alt="CRAN status"></a></li>
+<li>Jelmer Ypma <br><small class="roles"> Author </small>  </li>
+<li>Steven G. Johnson <br><small class="roles"> Author </small>  </li>
+<li>Aymeric Stamm <br><small class="roles"> Contributor, maintainer </small> <a href="https://orcid.org/0000-0002-8725-3654" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/astamm/nloptr/actions" class="external-link"><img src="https://github.com/astamm/nloptr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/astamm/nloptr/actions" class="external-link"><img src="https://github.com/astamm/nloptr/workflows/test-coverage/badge.svg" alt="test-coverage"></a></li>
+<li><a href="https://app.codecov.io/gh/astamm/nloptr?branch=master" class="external-link"><img src="https://codecov.io/gh/astamm/nloptr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/astamm/nloptr/actions" class="external-link"><img src="https://github.com/astamm/nloptr/workflows/pkgdown/badge.svg" alt="pkgdown"></a></li>
+<li><a href="https://CRAN.R-project.org/package=nloptr" class="external-link"><img src="https://www.r-pkg.org/badges/version/nloptr" alt="CRAN status"></a></li>
+</ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Jelmer Ypma, Steven G. Johnson, Aymeric Stamm.</p>
+  <p></p>
+<p>Developed by Jelmer Ypma, Steven G. Johnson, Aymeric Stamm.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -179,6 +181,8 @@
 
   
 
+
+  
 
   </body>
 </html>
