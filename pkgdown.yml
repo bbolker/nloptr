@@ -1,7 +1,7 @@
 pandoc: 2.7.3
-pkgdown: 2.0.0
+pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   nloptr: nloptr.html
-last_built: 2021-12-02T14:15Z
+last_built: 2021-12-06T11:23Z
 
