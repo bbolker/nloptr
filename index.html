@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="index.html">nloptr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.2.1.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-news">
 <li><h6 class="dropdown-header" data-toc-skip>Releases</h6></li>
     <li><a class="external-link dropdown-item" href="https://astamm.github.io/posts/2024-06-19-nloptr-210/">nloptr 2.1.0</a></li>
+    <li><a class="external-link dropdown-item" href="https://astamm.github.io/posts/2025-03-12-nloptr-220/">nloptr 2.2.0</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="news/index.html">Changelog</a></li>
   </ul>
@@ -74,7 +75,7 @@
 <div class="section level3">
 <h3 id="windows">Windows<a class="anchor" aria-label="anchor" href="#windows"></a>
 </h3>
-<p>On Windows, either the latest version <code>2.7.1</code> of <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link">NLopt</a> from <a href="https://github.com/rwinlib/nlopt" class="external-link">rwinlib</a> (windows-release) or the <code>v2.7.1</code> build from the <code>rtools42</code> toolchain (windows2022-devel) is used. So there is nothing else to be done.</p>
+<p>On Windows, for old versions of R (<code>R &lt;= 4.1.x</code>), the <em>nlopt</em> <code>v2.7.1</code> from <a href="https://github.com/rwinlib/nlopt" class="external-link">rwinlib</a> is used. For newer versions of R (<code>R &gt;= 4.2.0</code>), the <em>nlopt</em> version from the corresponding <code>RTools</code> toolchain is used.</p>
 </div>
 <div class="section level3">
 <h3 id="linux-and-macos">Linux and macOS<a class="anchor" aria-label="anchor" href="#linux-and-macos"></a>
@@ -82,7 +83,7 @@
 <p>On Unix-like platforms, we use <code>pkg-config</code> to find a suitable system build of <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link">NLopt</a> (i.e. with version <code>&gt;= 2.7.0</code>).</p>
 <ul>
 <li>If it is found it is used.</li>
-<li>Otherwise, <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link">NLopt</a> 2.7.1 is built from included sources using <a href="https://cmake.org" class="external-link">CMake</a>. In this case, a binary of <a href="https://cmake.org" class="external-link">CMake</a> stored in environment variable <code>CMAKE_BIN</code> is searched on the <code>PATH</code> and, alternatively, on a macOS-specific location. If that variable cannot be set, install will abort suggesting ways of installing <a href="https://cmake.org" class="external-link">CMake</a>. The minimal version requirement on <code>cmake</code> is <code>&gt;= 3.15.0</code>.</li>
+<li>Otherwise, <a href="https://nlopt.readthedocs.io/en/latest/" class="external-link">NLopt</a> 2.10.0 is built from included sources using <a href="https://cmake.org" class="external-link">CMake</a>. In this case, a binary of <a href="https://cmake.org" class="external-link">CMake</a> stored in environment variable <code>CMAKE_BIN</code> is searched on the <code>PATH</code> and, alternatively, on a macOS-specific location. If that variable cannot be set, install will abort suggesting ways of installing <a href="https://cmake.org" class="external-link">CMake</a>. The minimal version requirement on <code>cmake</code> is <code>&gt;= 3.2.0</code>.</li>
 </ul>
 </div>
 <div class="section level3">
@@ -101,16 +102,18 @@
 <a class="anchor" aria-label="anchor" href="#installing-nloptr"></a>
 </h3>
 <p>You can install <a href="https://astamm.github.io/nloptr/"><strong>nloptr</strong></a> from CRAN using:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"nloptr"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"nloptr"</span><span class="op">)</span></span></code></pre></div>
 <p>Alternatively, you can install the development version from GitHub:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"astamm/nloptr"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"astamm/nloptr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>
 </h2>
-<p>I would like to express my sincere gratitude to <a href="https://github.com/eddelbuettel" class="external-link">Dirk Eddelbuettel</a>, <a href="https://github.com/jeroen" class="external-link">Jeroen Ooms</a>, <a href="https://github.com/kalibera" class="external-link">Tomas Kalibera</a>, Uwe Ligges and <a href="https://github.com/jyypma" class="external-link">Jelmer Ypma</a> for their contributions and the very instructive discussions about the pros and cons of various build strategies in R packages.</p>
+<p>I would like to express my sincere gratitude to <a href="https://github.com/aadler" class="external-link">Avraham Adler</a>, <a href="https://github.com/eddelbuettel" class="external-link">Dirk Eddelbuettel</a>, <a href="https://github.com/jaganmn" class="external-link">Mikael Jagan</a>, <a href="https://github.com/kalibera" class="external-link">Tomas Kalibera</a>, <a href="https://github.com/jeroen" class="external-link">Jeroen Ooms</a> and <a href="https://github.com/jyypma" class="external-link">Jelmer Ypma</a> for their contributions and the very instructive discussions about the pros and cons of various build strategies in R packages.</p>
 </div>
 <div class="section level2">
 <h2 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a>
@@ -156,9 +159,8 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/astamm/nloptr/actions" class="external-link"><img src="https://github.com/astamm/nloptr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://github.com/astamm/nloptr/actions" class="external-link"><img src="https://github.com/astamm/nloptr/workflows/test-coverage/badge.svg" alt="test-coverage"></a></li>
-<li><a href="https://app.codecov.io/gh/astamm/nloptr?branch=master" class="external-link"><img src="https://codecov.io/gh/astamm/nloptr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/astamm/nloptr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/astamm/nloptr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://app.codecov.io/gh/astamm/nloptr" class="external-link"><img src="https://codecov.io/gh/astamm/nloptr/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://github.com/astamm/nloptr/actions" class="external-link"><img src="https://github.com/astamm/nloptr/workflows/pkgdown/badge.svg" alt="pkgdown"></a></li>
 <li><a href="https://CRAN.R-project.org/package=nloptr" class="external-link"><img src="https://www.r-pkg.org/badges/version/nloptr" alt="CRAN status"></a></li>
 </ul>

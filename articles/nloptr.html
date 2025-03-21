@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">nloptr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.2.1.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +36,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-news">
 <li><h6 class="dropdown-header" data-toc-skip>Releases</h6></li>
     <li><a class="external-link dropdown-item" href="https://astamm.github.io/posts/2024-06-19-nloptr-210/">nloptr 2.1.0</a></li>
+    <li><a class="external-link dropdown-item" href="https://astamm.github.io/posts/2025-03-12-nloptr-220/">nloptr 2.2.0</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="../news/index.html">Changelog</a></li>
   </ul>
@@ -62,7 +63,7 @@
                         <h4 data-toc-skip class="author">Jelmer Ypma,
 Aymeric Stamm, and Avraham Adler</h4>
             
-            <h4 data-toc-skip class="date">2024-11-25</h4>
+            <h4 data-toc-skip class="date">2025-03-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/astamm/nloptr/blob/master/vignettes/nloptr.Rmd" class="external-link"><code>vignettes/nloptr.Rmd</code></a></small>
       <div class="d-none name"><code>nloptr.Rmd</code></div>
@@ -223,7 +224,7 @@ using</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## Minimization using NLopt version 2.7.1 </span></span>
+<span><span class="co">## Minimization using NLopt version 2.10.0 </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## NLopt solver status: 1 ( NLOPT_SUCCESS: Generic success </span></span>
 <span><span class="co">## return value. )</span></span>
@@ -257,7 +258,7 @@ instance:</p>
 <span><span class="co">## nloptr(x0 = x0, eval_f = eval_f_list, opts = opts)</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## Minimization using NLopt version 2.7.1 </span></span>
+<span><span class="co">## Minimization using NLopt version 2.10.0 </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## NLopt solver status: 1 ( NLOPT_SUCCESS: Generic success </span></span>
 <span><span class="co">## return value. )</span></span>
@@ -450,7 +451,7 @@ following command:</p>
 <span><span class="co">##         check_derivatives_print = "all"), a = a, b = b)</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## Minimization using NLopt version 2.7.1 </span></span>
+<span><span class="co">## Minimization using NLopt version 2.10.0 </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## NLopt solver status: 4 ( NLOPT_XTOL_REACHED: Optimization </span></span>
 <span><span class="co">## stopped because xtol_rel or xtol_abs (above) was reached. </span></span>
@@ -518,7 +519,7 @@ that doesn’t need gradient information <span class="citation">(Powell
 <span><span class="co">##         xtol_rel = 1e-08), a = a, b = b)</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## Minimization using NLopt version 2.7.1 </span></span>
+<span><span class="co">## Minimization using NLopt version 2.10.0 </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## NLopt solver status: 4 ( NLOPT_XTOL_REACHED: Optimization </span></span>
 <span><span class="co">## stopped because xtol_rel or xtol_abs (above) was reached. </span></span>
@@ -660,9 +661,8 @@ problem.</p>
 <span><span class="co">##           NLOPT_GN_DIRECT_L_RAND_NOSCAL,</span></span>
 <span><span class="co">##           NLOPT_GN_ORIG_DIRECT, NLOPT_GN_ORIG_DIRECT_L,</span></span>
 <span><span class="co">##           NLOPT_GD_STOGO, NLOPT_GD_STOGO_RAND,</span></span>
-<span><span class="co">##           NLOPT_LD_SLSQP, NLOPT_LD_LBFGS_NOCEDAL,</span></span>
-<span><span class="co">##           NLOPT_LD_LBFGS, NLOPT_LN_PRAXIS, NLOPT_LD_VAR1,</span></span>
-<span><span class="co">##           NLOPT_LD_VAR2, NLOPT_LD_TNEWTON,</span></span>
+<span><span class="co">##           NLOPT_LD_SLSQP, NLOPT_LD_LBFGS, NLOPT_LN_PRAXIS,</span></span>
+<span><span class="co">##           NLOPT_LD_VAR1, NLOPT_LD_VAR2, NLOPT_LD_TNEWTON,</span></span>
 <span><span class="co">##           NLOPT_LD_TNEWTON_RESTART,</span></span>
 <span><span class="co">##           NLOPT_LD_TNEWTON_PRECOND,</span></span>
 <span><span class="co">##           NLOPT_LD_TNEWTON_PRECOND_RESTART,</span></span>
